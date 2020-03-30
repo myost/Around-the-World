@@ -1,0 +1,19 @@
+fragment CountryBasics on Country {
+  name
+  code
+  emoji
+  languages{
+    name
+  }
+}
+
+query ContinentsInfo {
+  continents {
+    name
+    code
+    countries {
+      ...CountryBasics
+    }
+  }
+}
+

@@ -1,0 +1,36 @@
+query CountryInfo($code: String!) {
+  country(code: $code) {
+    ...CountryDetails
+  }
+}
+
+fragment CountryDetails on Country {
+  name
+  continent{
+    name
+  }
+  code
+  states {
+    ...StateDetails
+  }
+  phone
+  currency
+  emoji
+  languages{
+    ...LanguageDetails
+  }
+}
+
+fragment LanguageDetails on Language {
+  name
+  native
+  code
+}
+
+fragment StateDetails on State {
+  name
+  code
+  country {
+    name
+  }
+}
