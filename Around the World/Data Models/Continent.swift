@@ -21,3 +21,8 @@ extension Continent {
         case countries
     }
 }
+
+
+struct ContinentContainer: Codable {
+    var continents: [Continent]?
+}

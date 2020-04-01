@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A807B29242D3EB700CAC0E1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B28242D3EB700CAC0E1 /* Apollo */; };
 		9A807B2B242D3EB700CAC0E1 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B2A242D3EB700CAC0E1 /* ApolloCodegenLib */; };
+		9A893BC824351F3A00F542C8 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */; };
 		9A9AB9A0242CF763000CB1C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */; };
 		9A9AB9A2242CF763000CB1C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */; };
 		9A9AB9A4242CF763000CB1C7 /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9A3242CF763000CB1C7 /* CountryListView.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		9A6748D8242D5ACA003EDC52 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9A6748DA242D5BF5003EDC52 /* CountryList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CountryList.graphql; sourceTree = "<group>"; };
+		9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
 		9A9AB99C242CF763000CB1C7 /* Around the World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Around the World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,8 +84,6 @@
 			children = (
 				9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */,
 				9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */,
-				9ACF49CB242E41EE00FA269D /* API.swift */,
-				9A6748D8242D5ACA003EDC52 /* schema.json */,
 				9A9AB9BC242CF926000CB1C7 /* Views */,
 				9A9AB9BD242CF933000CB1C7 /* Networking */,
 				9A9AB9BB242CF8BD000CB1C7 /* Data Models */,
@@ -118,8 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				9A9AB9A3242CF763000CB1C7 /* CountryListView.swift */,
-				9ACF49D3242E879500FA269D /* CountryRow.swift */,
+				9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */,
 				9A6748DA242D5BF5003EDC52 /* CountryList.graphql */,
+				9ACF49D3242E879500FA269D /* CountryRow.swift */,
 				9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */,
 				9ACF49CF242E697500FA269D /* CountryDetails.graphql */,
 			);
@@ -129,6 +130,8 @@
 		9A9AB9BD242CF933000CB1C7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				9ACF49CB242E41EE00FA269D /* API.swift */,
+				9A6748D8242D5ACA003EDC52 /* schema.json */,
 				9ACF49CD242E439E00FA269D /* Apollo.swift */,
 			);
 			path = Networking;
@@ -226,7 +229,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://countries.trevorblades.com/\"\n\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Networking/schema.json\" API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://countries.trevorblades.com/\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -244,6 +247,7 @@
 				9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */,
 				9A9AB9BA242CF81B000CB1C7 /* State.swift in Sources */,
 				9ACF49CC242E41EE00FA269D /* API.swift in Sources */,
+				9A893BC824351F3A00F542C8 /* CountryListViewModel.swift in Sources */,
 				9A9AB9A4242CF763000CB1C7 /* CountryListView.swift in Sources */,
 				9ACF49D2242E6A1800FA269D /* CountryDetailsView.swift in Sources */,
 			);

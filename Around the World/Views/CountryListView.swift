@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct CountryListView: View {
+    @ObservedObject var viewModel: CountryListViewModel
+
     var body: some View {
         List {
             CountryRow()
@@ -18,6 +20,6 @@ struct CountryListView: View {
 
 struct CountryListView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryListView()
+        CountryListView(viewModel: CountryListViewModel())
     }
 }
