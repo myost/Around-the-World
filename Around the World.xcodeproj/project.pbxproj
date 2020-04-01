@@ -20,7 +20,7 @@
 		9A9AB9B8242CF7C5000CB1C7 /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B7242CF7C5000CB1C7 /* Continent.swift */; };
 		9A9AB9BA242CF81B000CB1C7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B9242CF81B000CB1C7 /* State.swift */; };
 		9ACF49CC242E41EE00FA269D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49CB242E41EE00FA269D /* API.swift */; };
-		9ACF49CE242E439E00FA269D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49CD242E439E00FA269D /* Network.swift */; };
+		9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49CD242E439E00FA269D /* Apollo.swift */; };
 		9ACF49D0242E697500FA269D /* CountryDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF49CF242E697500FA269D /* CountryDetails.graphql */; };
 		9ACF49D2242E6A1800FA269D /* CountryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */; };
 		9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49D3242E879500FA269D /* CountryRow.swift */; };
@@ -42,7 +42,7 @@
 		9A9AB9B7242CF7C5000CB1C7 /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
 		9A9AB9B9242CF81B000CB1C7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		9ACF49CB242E41EE00FA269D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		9ACF49CD242E439E00FA269D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		9ACF49CD242E439E00FA269D /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		9ACF49CF242E697500FA269D /* CountryDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CountryDetails.graphql; sourceTree = "<group>"; };
 		9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsView.swift; sourceTree = "<group>"; };
 		9ACF49D3242E879500FA269D /* CountryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		9A9AB9BD242CF933000CB1C7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				9ACF49CD242E439E00FA269D /* Network.swift */,
+				9ACF49CD242E439E00FA269D /* Apollo.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 				9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */,
 				9A9AB9A0242CF763000CB1C7 /* AppDelegate.swift in Sources */,
 				9A9AB9A2242CF763000CB1C7 /* SceneDelegate.swift in Sources */,
-				9ACF49CE242E439E00FA269D /* Network.swift in Sources */,
+				9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */,
 				9A9AB9BA242CF81B000CB1C7 /* State.swift in Sources */,
 				9ACF49CC242E41EE00FA269D /* API.swift in Sources */,
 				9A9AB9A4242CF763000CB1C7 /* CountryListView.swift in Sources */,
