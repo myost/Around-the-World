@@ -7,13 +7,28 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CountryListView: View {
     @ObservedObject var viewModel: CountryListViewModel
 
     var body: some View {
-        List {
-            CountryRow()
+        NavigationView {
+            content
+                .navigationBarTitle("Countries")
+        }.onAppear { self.viewModel.send(event: .onAppear) }
+    }
+
+    private var content: some View {
+        switch viewModel.state {
+        case .idle:
+            return Color.clear.eraseToAnyView()
+        case .loading:
+            return Spinner(isAnimating: true, style: .large).eraseToAnyView()
+        case .error(let error):
+            return Text(error.localizedDescription).eraseToAnyView()
+        case .loaded(let continents):
+            return list(of: continents).eraseToAnyView()
         }
     }
 

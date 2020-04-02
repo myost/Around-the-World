@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9A5B21742436427C0012593A /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B21732436427C0012593A /* Spinner.swift */; };
+		9A613C87243676B100718082 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C86243676B100718082 /* System.swift */; };
+		9A613C89243676C200718082 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C88243676C200718082 /* Feedback.swift */; };
+		9A613C8B2436819600718082 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C8A2436819600718082 /* View+Extensions.swift */; };
 		9A807B29242D3EB700CAC0E1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B28242D3EB700CAC0E1 /* Apollo */; };
 		9A807B2B242D3EB700CAC0E1 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B2A242D3EB700CAC0E1 /* ApolloCodegenLib */; };
 		9A893BC824351F3A00F542C8 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */; };
@@ -30,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		9A5B21732436427C0012593A /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		9A613C86243676B100718082 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		9A613C88243676C200718082 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		9A613C8A2436819600718082 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		9A6748D8242D5ACA003EDC52 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9A6748DA242D5BF5003EDC52 /* CountryList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CountryList.graphql; sourceTree = "<group>"; };
 		9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 				9A5B21712436421D0012593A /* Country List */,
 				9A9AB9BC242CF926000CB1C7 /* Country Details */,
 				9A5B2175243643BD0012593A /* Supporting Views */,
+				9A613C8A2436819600718082 /* View+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +99,15 @@
 				9A5B21732436427C0012593A /* Spinner.swift */,
 			);
 			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
+		9A613C852436769B00718082 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				9A613C86243676B100718082 /* System.swift */,
+				9A613C88243676C200718082 /* Feedback.swift */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		9A9AB993242CF763000CB1C7 = {
@@ -118,6 +134,7 @@
 				9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */,
 				9A5B21722436425D0012593A /* Views */,
 				9A9AB9BD242CF933000CB1C7 /* Networking */,
+				9A613C852436769B00718082 /* Feedback */,
 				9A9AB9BB242CF8BD000CB1C7 /* Data Models */,
 				9A9AB9A5242CF764000CB1C7 /* Assets.xcassets */,
 				9A9AB9AA242CF764000CB1C7 /* LaunchScreen.storyboard */,
@@ -267,12 +284,15 @@
 			files = (
 				9A9AB9B4242CF781000CB1C7 /* Country.swift in Sources */,
 				9A9AB9B6242CF7BB000CB1C7 /* Language.swift in Sources */,
+				9A613C89243676C200718082 /* Feedback.swift in Sources */,
 				9A9AB9B8242CF7C5000CB1C7 /* Continent.swift in Sources */,
 				9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */,
 				9A5B21742436427C0012593A /* Spinner.swift in Sources */,
+				9A613C8B2436819600718082 /* View+Extensions.swift in Sources */,
 				9A9AB9A0242CF763000CB1C7 /* AppDelegate.swift in Sources */,
 				9A9AB9A2242CF763000CB1C7 /* SceneDelegate.swift in Sources */,
 				9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */,
+				9A613C87243676B100718082 /* System.swift in Sources */,
 				9A9AB9BA242CF81B000CB1C7 /* State.swift in Sources */,
 				9A893BC824351F3A00F542C8 /* CountryListViewModel.swift in Sources */,
 				9A9AB9A4242CF763000CB1C7 /* CountryListView.swift in Sources */,
