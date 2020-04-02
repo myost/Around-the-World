@@ -1,5 +1,5 @@
 //
-//  CountryListView.swift
+//  ContinentListView.swift
 //  Around the World
 //
 //  Created by Madison Yost on 3/26/20.
@@ -9,13 +9,13 @@
 import SwiftUI
 import Combine
 
-struct CountryListView: View {
-    @ObservedObject var viewModel: CountryListViewModel
+struct ContinentListView: View {
+    @ObservedObject var viewModel: ContinentListViewModel
 
     var body: some View {
         NavigationView {
             content
-                .navigationBarTitle("Countries")
+                .navigationBarTitle("Continents")
         }.onAppear { self.viewModel.send(event: .onAppear) }
     }
 
@@ -35,10 +35,8 @@ struct CountryListView: View {
     private func list(of continents: [Continent]) -> some View {
         return List {
             ForEach(continents) { continent in
-                Section(header: Text("\(continent.name)")) {
-                    ForEach(continent.countries) { country in
-                        CountryRow()
-                    }
+                NavigationLink(destination: ContinentDetailsView(continent: continent)) {
+                    ContinentRow(continent: continent)
                 }
             }
         }
@@ -49,8 +47,8 @@ struct CountryListView: View {
     }
 }
 
-struct CountryListView_Previews: PreviewProvider {
+struct ContinentListView_Previews: PreviewProvider {
     static var previews: some View {
-        CountryListView(viewModel: CountryListViewModel())
+        ContinentListView(viewModel: ContinentListViewModel())
     }
 }

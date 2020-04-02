@@ -9,13 +9,24 @@
 import SwiftUI
 
 struct CountryDetailsView: View {
+    let country: Country
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Code: \(country.id)")
+            VStack {
+                Text("Languages Spoken:")
+                ForEach(country.languages) { language in
+                    Text("\(language.name)")
+                }
+            }
+        }
+        .navigationBarTitle("\(country.name)", displayMode: .inline)
     }
 }
 
-struct CountryDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CountryDetailsView()
-    }
-}
+//struct CountryDetailsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CountryDetailsView()
+//    }
+//}

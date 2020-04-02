@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct CountryRow: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    let country: Country
 
-struct CountryRow_Previews: PreviewProvider {
-    static var previews: some View {
-        CountryRow()
+    var body: some View {
+        content
+    }
+
+    private var content: some View {
+        return Text(country.name)
+            .font(.body)
+            .padding(5.0)
     }
 }

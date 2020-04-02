@@ -1,5 +1,5 @@
 //
-//  CountryListViewModel.swift
+//  ContinentListViewModel.swift
 //  Around the World
 //
 //  Created by Madison Yost on 4/1/20.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-final class CountryListViewModel: ObservableObject {
+final class ContinentListViewModel: ObservableObject {
 
     //MARK: - Properties
 
@@ -52,7 +52,7 @@ final class CountryListViewModel: ObservableObject {
 
     //MARK: - Data Fetching
 
-extension CountryListViewModel {
+extension ContinentListViewModel {
     static func fetchContinentData() -> AnyPublisher<[Continent], Error> {
         let publisher = ApolloWrapper().fetch(query: ContinentsInfoQuery())
             .decode(type: ContinentContainer.self, decoder: JSONDecoder())
@@ -66,7 +66,7 @@ extension CountryListViewModel {
 
 //MARK: - State Machine
 
-extension CountryListViewModel {
+extension ContinentListViewModel {
 
     static func reduce(_ state: State, _ event: Event) -> State {
         switch state {
@@ -112,7 +112,7 @@ extension CountryListViewModel {
 
 //MARK: - Constants
 
-extension CountryListViewModel {
+extension ContinentListViewModel {
     enum State {
         case idle
         case loading

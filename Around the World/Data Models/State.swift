@@ -9,8 +9,8 @@
 import Foundation
 
 struct State: Codable, Identifiable {
-    var name: String?
-    var id: String?
+    var name: String
+    var id: String
     var country: Country?
 }
 

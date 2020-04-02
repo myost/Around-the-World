@@ -9,8 +9,8 @@
 import Foundation
 
 struct Country: Codable, Identifiable {
-    var id: String?
-    var name: String?
+    var id: String
+    var name: String
     var phone: String?
     var continent: Continent?
     var currency: String?
