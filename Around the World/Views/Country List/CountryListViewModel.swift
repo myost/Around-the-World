@@ -10,14 +10,46 @@ import Foundation
 import Combine
 
 final class CountryListViewModel: ObservableObject {
+
+    //MARK: - Properties
+
     @Published var continentData: [Continent]
 
-    func fetchContinentData() -> AnyPublisher<[Continent], Error> {
+
+    //MARK: - Initialization
+
+    init() {
+        //TODO
+    }
+
+
+    //MARK: - Private
+
+    private func fetchContinentData() -> AnyPublisher<[Continent], Error> {
         let publisher = ApolloWrapper().fetch(query: ContinentsInfoQuery())
             .decode(type: ContinentContainer.self, decoder: JSONDecoder())
             .compactMap {
                 $0.continents
             }.eraseToAnyPublisher()
         return publisher
+    }
+}
+
+
+//MARK: - Constants
+
+extension CountryListViewModel {
+    enum State {
+        case idle
+        case loading
+        case loaded([Continent])
+        case error(Error)
+    }
+
+    enum Event {
+        case onAppear
+        case onSelectCountry(Int)
+        case onContinentsLoaded([Continent])
+        case onFailedToLoadContinents(Error)
     }
 }

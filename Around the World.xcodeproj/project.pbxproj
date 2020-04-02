@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A5B21742436427C0012593A /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B21732436427C0012593A /* Spinner.swift */; };
 		9A807B29242D3EB700CAC0E1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B28242D3EB700CAC0E1 /* Apollo */; };
 		9A807B2B242D3EB700CAC0E1 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B2A242D3EB700CAC0E1 /* ApolloCodegenLib */; };
 		9A893BC824351F3A00F542C8 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A5B21732436427C0012593A /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		9A6748D8242D5ACA003EDC52 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9A6748DA242D5BF5003EDC52 /* CountryList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CountryList.graphql; sourceTree = "<group>"; };
 		9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
@@ -63,6 +65,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A5B21712436421D0012593A /* Country List */ = {
+			isa = PBXGroup;
+			children = (
+				9A9AB9A3242CF763000CB1C7 /* CountryListView.swift */,
+				9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */,
+				9A6748DA242D5BF5003EDC52 /* CountryList.graphql */,
+				9ACF49D3242E879500FA269D /* CountryRow.swift */,
+			);
+			path = "Country List";
+			sourceTree = "<group>";
+		};
+		9A5B21722436425D0012593A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A5B21712436421D0012593A /* Country List */,
+				9A9AB9BC242CF926000CB1C7 /* Country Details */,
+				9A5B2175243643BD0012593A /* Supporting Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A5B2175243643BD0012593A /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A5B21732436427C0012593A /* Spinner.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
 		9A9AB993242CF763000CB1C7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +116,7 @@
 				9A893BC9243557EB00F542C8 /* API.swift */,
 				9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */,
 				9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */,
-				9A9AB9BC242CF926000CB1C7 /* Views */,
+				9A5B21722436425D0012593A /* Views */,
 				9A9AB9BD242CF933000CB1C7 /* Networking */,
 				9A9AB9BB242CF8BD000CB1C7 /* Data Models */,
 				9A9AB9A5242CF764000CB1C7 /* Assets.xcassets */,
@@ -115,17 +146,13 @@
 			path = "Data Models";
 			sourceTree = "<group>";
 		};
-		9A9AB9BC242CF926000CB1C7 /* Views */ = {
+		9A9AB9BC242CF926000CB1C7 /* Country Details */ = {
 			isa = PBXGroup;
 			children = (
-				9A9AB9A3242CF763000CB1C7 /* CountryListView.swift */,
-				9A893BC724351F3A00F542C8 /* CountryListViewModel.swift */,
-				9A6748DA242D5BF5003EDC52 /* CountryList.graphql */,
-				9ACF49D3242E879500FA269D /* CountryRow.swift */,
 				9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */,
 				9ACF49CF242E697500FA269D /* CountryDetails.graphql */,
 			);
-			path = Views;
+			path = "Country Details";
 			sourceTree = "<group>";
 		};
 		9A9AB9BD242CF933000CB1C7 /* Networking */ = {
@@ -242,6 +269,7 @@
 				9A9AB9B6242CF7BB000CB1C7 /* Language.swift in Sources */,
 				9A9AB9B8242CF7C5000CB1C7 /* Continent.swift in Sources */,
 				9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */,
+				9A5B21742436427C0012593A /* Spinner.swift in Sources */,
 				9A9AB9A0242CF763000CB1C7 /* AppDelegate.swift in Sources */,
 				9A9AB9A2242CF763000CB1C7 /* SceneDelegate.swift in Sources */,
 				9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */,

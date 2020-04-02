@@ -16,6 +16,22 @@ struct CountryListView: View {
             CountryRow()
         }
     }
+
+    private func list(of continents: [Continent]) -> some View {
+        return List {
+            ForEach(continents) { continent in
+                Section(header: Text("\(continent.name)")) {
+                    ForEach(continent.countries) { country in
+                        CountryRow()
+                    }
+                }
+            }
+        }
+    }
+
+    private var spinner: some View {
+        Spinner(isAnimating: true, style: .medium)
+    }
 }
 
 struct CountryListView_Previews: PreviewProvider {
