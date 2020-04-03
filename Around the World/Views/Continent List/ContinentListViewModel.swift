@@ -19,7 +19,6 @@ final class ContinentListViewModel: ObservableObject {
     //MARK: Private
 
     private var cancellableSet = Set<AnyCancellable>()
-
     private let input = PassthroughSubject<Event, Never>()
 
 
@@ -46,20 +45,6 @@ final class ContinentListViewModel: ObservableObject {
     /// A way of passing user input and lifecycle events, send the events into the feed loop for propogation
     func send(event: Event) {
         input.send(event)
-    }
-}
-
-
-    //MARK: - Data Fetching
-
-extension ContinentListViewModel {
-    static func fetchContinentData() -> AnyPublisher<[Continent], Error> {
-        let publisher = ApolloWrapper().fetch(query: ContinentsInfoQuery())
-            .decode(type: ContinentContainer.self, decoder: JSONDecoder())
-            .compactMap {
-                $0.continents
-            }.eraseToAnyPublisher()
-        return publisher
     }
 }
 
@@ -101,7 +86,7 @@ extension ContinentListViewModel {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
 
-            return Self.fetchContinentData()
+            return ContinentsAPI.fetchContinentData()
                 .map(Event.onContinentsLoaded)
                 .catch { Just(Event.onFailedToLoadContinents($0)) }
                 .eraseToAnyPublisher()
@@ -122,7 +107,7 @@ extension ContinentListViewModel {
 
     enum Event {
         case onAppear
-        case onSelectCountry(Int)
+        case onSelectContinent(Int)
         case onContinentsLoaded([Continent])
         case onFailedToLoadContinents(Error)
     }

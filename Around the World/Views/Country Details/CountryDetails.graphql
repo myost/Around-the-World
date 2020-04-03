@@ -1,21 +1,22 @@
-query CountryInfo($code: String!) {
+query CountryInfo($code: ID!) {
   country(code: $code) {
     ...CountryDetails
   }
 }
 
 fragment CountryDetails on Country {
-  name
-  continent{
-    name
-  }
   code
-  states {
-    ...StateDetails
-  }
+  name
   phone
   currency
   emoji
+  continent{
+    name
+    code
+  }
+  states {
+    ...StateDetails
+  }
   languages{
     ...LanguageDetails
   }
@@ -30,7 +31,4 @@ fragment LanguageDetails on Language {
 fragment StateDetails on State {
   name
   code
-  country {
-    name
-  }
 }

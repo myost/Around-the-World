@@ -17,7 +17,7 @@ struct Country: Codable, Identifiable {
     var languages: [Language]?
     var emoji: String?
     var emojiU: String?
-    var states: [State]?
+    var states: [Province]?
 }
 
 extension Country {

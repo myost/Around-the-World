@@ -11,10 +11,10 @@ import Foundation
 struct Continent: Codable, Identifiable {
     var id: String
     var name: String
-    var countries: [Country]?
+    var countries: [Country]
 
     var numberOfCountries: Int {
-        return countries?.count ?? 0
+        return countries.count
     }
 }
 

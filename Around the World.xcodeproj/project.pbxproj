@@ -13,10 +13,12 @@
 		9A613C8B2436819600718082 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C8A2436819600718082 /* View+Extensions.swift */; };
 		9A613C8D2436871800718082 /* ContinentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C8C2436871800718082 /* ContinentRow.swift */; };
 		9A613C90243691B900718082 /* ContinentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C8F243691B900718082 /* ContinentDetailsView.swift */; };
+		9A7CD50B24378D0C0063E9DB /* CountryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7CD50A24378D0C0063E9DB /* CountryDetailsViewModel.swift */; };
+		9A7CD50D243790800063E9DB /* ContinentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7CD50C243790800063E9DB /* ContinentsAPI.swift */; };
+		9A7CD5102437AC910063E9DB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7CD50E2437AC7B0063E9DB /* API.swift */; };
 		9A807B29242D3EB700CAC0E1 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B28242D3EB700CAC0E1 /* Apollo */; };
 		9A807B2B242D3EB700CAC0E1 /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9A807B2A242D3EB700CAC0E1 /* ApolloCodegenLib */; };
 		9A893BC824351F3A00F542C8 /* ContinentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A893BC724351F3A00F542C8 /* ContinentListViewModel.swift */; };
-		9A893BCA243557EC00F542C8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A893BC9243557EB00F542C8 /* API.swift */; };
 		9A9AB9A0242CF763000CB1C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */; };
 		9A9AB9A2242CF763000CB1C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */; };
 		9A9AB9A4242CF763000CB1C7 /* ContinentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9A3242CF763000CB1C7 /* ContinentListView.swift */; };
@@ -26,9 +28,8 @@
 		9A9AB9B4242CF781000CB1C7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B3242CF781000CB1C7 /* Country.swift */; };
 		9A9AB9B6242CF7BB000CB1C7 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B5242CF7BB000CB1C7 /* Language.swift */; };
 		9A9AB9B8242CF7C5000CB1C7 /* Continent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B7242CF7C5000CB1C7 /* Continent.swift */; };
-		9A9AB9BA242CF81B000CB1C7 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B9242CF81B000CB1C7 /* State.swift */; };
+		9A9AB9BA242CF81B000CB1C7 /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AB9B9242CF81B000CB1C7 /* Province.swift */; };
 		9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49CD242E439E00FA269D /* Apollo.swift */; };
-		9ACF49D0242E697500FA269D /* CountryDetails.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 9ACF49CF242E697500FA269D /* CountryDetails.graphql */; };
 		9ACF49D2242E6A1800FA269D /* CountryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */; };
 		9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49D3242E879500FA269D /* CountryRow.swift */; };
 /* End PBXBuildFile section */
@@ -42,8 +43,10 @@
 		9A613C8F243691B900718082 /* ContinentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentDetailsView.swift; sourceTree = "<group>"; };
 		9A6748D8242D5ACA003EDC52 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		9A6748DA242D5BF5003EDC52 /* ContinentList.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ContinentList.graphql; sourceTree = "<group>"; };
+		9A7CD50A24378D0C0063E9DB /* CountryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsViewModel.swift; sourceTree = "<group>"; };
+		9A7CD50C243790800063E9DB /* ContinentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentsAPI.swift; sourceTree = "<group>"; };
+		9A7CD50E2437AC7B0063E9DB /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9A893BC724351F3A00F542C8 /* ContinentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentListViewModel.swift; sourceTree = "<group>"; };
-		9A893BC9243557EB00F542C8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		9A9AB99C242CF763000CB1C7 /* Around the World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Around the World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +58,7 @@
 		9A9AB9B3242CF781000CB1C7 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9A9AB9B5242CF7BB000CB1C7 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		9A9AB9B7242CF7C5000CB1C7 /* Continent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continent.swift; sourceTree = "<group>"; };
-		9A9AB9B9242CF81B000CB1C7 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		9A9AB9B9242CF81B000CB1C7 /* Province.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
 		9ACF49CD242E439E00FA269D /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		9ACF49CF242E697500FA269D /* CountryDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CountryDetails.graphql; sourceTree = "<group>"; };
 		9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsView.swift; sourceTree = "<group>"; };
@@ -143,7 +146,7 @@
 		9A9AB99E242CF763000CB1C7 /* Around the World */ = {
 			isa = PBXGroup;
 			children = (
-				9A893BC9243557EB00F542C8 /* API.swift */,
+				9A7CD50E2437AC7B0063E9DB /* API.swift */,
 				9A9AB99F242CF763000CB1C7 /* AppDelegate.swift */,
 				9A9AB9A1242CF763000CB1C7 /* SceneDelegate.swift */,
 				9A5B21722436425D0012593A /* Views */,
@@ -170,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				9A9AB9B3242CF781000CB1C7 /* Country.swift */,
-				9A9AB9B9242CF81B000CB1C7 /* State.swift */,
+				9A9AB9B9242CF81B000CB1C7 /* Province.swift */,
 				9A9AB9B5242CF7BB000CB1C7 /* Language.swift */,
 				9A9AB9B7242CF7C5000CB1C7 /* Continent.swift */,
 			);
@@ -181,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */,
+				9A7CD50A24378D0C0063E9DB /* CountryDetailsViewModel.swift */,
 				9ACF49CF242E697500FA269D /* CountryDetails.graphql */,
 			);
 			path = "Country Details";
@@ -191,6 +195,7 @@
 			children = (
 				9A6748D8242D5ACA003EDC52 /* schema.json */,
 				9ACF49CD242E439E00FA269D /* Apollo.swift */,
+				9A7CD50C243790800063E9DB /* ContinentsAPI.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -262,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9AB9AC242CF764000CB1C7 /* LaunchScreen.storyboard in Resources */,
-				9ACF49D0242E697500FA269D /* CountryDetails.graphql in Resources */,
 				9A9AB9A9242CF764000CB1C7 /* Preview Assets.xcassets in Resources */,
 				9A9AB9A6242CF764000CB1C7 /* Assets.xcassets in Resources */,
 			);
@@ -287,7 +291,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"Networking/schema.json\" API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://countries.trevorblades.com/\"\n\n";
+			shellScript = "# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --passthroughCustomScalars --target=swift --includes=./**/*.graphql --localSchemaFile=\"Networking/schema.json\" API.swift\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://countries.trevorblades.com/\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -304,15 +308,17 @@
 				9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */,
 				9A5B21742436427C0012593A /* Spinner.swift in Sources */,
 				9A613C8B2436819600718082 /* View+Extensions.swift in Sources */,
+				9A7CD50B24378D0C0063E9DB /* CountryDetailsViewModel.swift in Sources */,
 				9A9AB9A0242CF763000CB1C7 /* AppDelegate.swift in Sources */,
 				9A9AB9A2242CF763000CB1C7 /* SceneDelegate.swift in Sources */,
 				9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */,
 				9A613C87243676B100718082 /* System.swift in Sources */,
 				9A613C90243691B900718082 /* ContinentDetailsView.swift in Sources */,
-				9A9AB9BA242CF81B000CB1C7 /* State.swift in Sources */,
+				9A7CD5102437AC910063E9DB /* API.swift in Sources */,
+				9A9AB9BA242CF81B000CB1C7 /* Province.swift in Sources */,
 				9A893BC824351F3A00F542C8 /* ContinentListViewModel.swift in Sources */,
 				9A9AB9A4242CF763000CB1C7 /* ContinentListView.swift in Sources */,
-				9A893BCA243557EC00F542C8 /* API.swift in Sources */,
+				9A7CD50D243790800063E9DB /* ContinentsAPI.swift in Sources */,
 				9ACF49D2242E6A1800FA269D /* CountryDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,10 +41,6 @@ struct ContinentListView: View {
             }
         }
     }
-
-    private var spinner: some View {
-        Spinner(isAnimating: true, style: .medium)
-    }
 }
 
 struct ContinentListView_Previews: PreviewProvider {

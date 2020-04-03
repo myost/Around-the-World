@@ -20,7 +20,7 @@ struct ContinentDetailsView: View {
                     .font(.system(size: 24))
                     .padding(5.0)) {
                     ForEach(continent.countries) { country in
-                        NavigationLink(destination: CountryDetailsView(country: country)) {
+                        NavigationLink(destination: CountryDetailsView(viewModel: CountryDetailsViewModel(countryId: country.id), title: country.name)) {
                             CountryRow(country: country)
                         }
                     }

@@ -11,7 +11,7 @@ import Foundation
 struct Language: Codable {
     var name: String
     var id: String
-    var native: String?
+    var native: String
     var rtl: String?
 }
 
