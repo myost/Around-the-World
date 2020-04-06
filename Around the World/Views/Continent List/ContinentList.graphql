@@ -1,10 +1,6 @@
 fragment CountryBasics on Country {
   name
   code
-  emoji
-  languages{
-    name
-  }
 }
 
 query ContinentsInfo {

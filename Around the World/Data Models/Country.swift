@@ -10,14 +10,14 @@ import Foundation
 
 struct Country: Codable, Identifiable {
     var id: String?
-    var name: String?
+    var name: String
     var phone: String?
     var continent: Continent?
     var currency: String?
     var languages: [Language]?
     var emoji: String?
     var emojiU: String?
-    var states: [State]?
+    var states: [Province]?
 }
 
 extension Country {
@@ -32,4 +32,8 @@ extension Country {
         case emojiU
         case states
     }
+}
+
+struct CountryContainer: Codable {
+    var country: Country
 }
