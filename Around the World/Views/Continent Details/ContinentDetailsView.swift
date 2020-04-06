@@ -10,7 +10,7 @@ import SwiftUI
 import MapKit
 
 struct ContinentDetailsView: View {
-    let continent: Continent
+    let continent: ContinentDisplayable
 
     var body: some View {
         VStack(alignment: .leading, spacing: 20.0) {

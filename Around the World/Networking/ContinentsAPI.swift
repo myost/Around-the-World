@@ -14,16 +14,20 @@ enum ContinentsAPI {
 
     ///A function for fetching basic data on all continents
     static func fetchContinentData() -> AnyPublisher<[Continent], Error> {
-        return ApolloWrapper().fetch(query: ContinentsInfoQuery())
+        return Deferred {
+            ApolloWrapper().fetch(query: ContinentsInfoQuery())
             .decode(type: ContinentContainer.self, decoder: JSONDecoder())
             .compactMap { $0.continents }
             .eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
 
     ///A function for getting all data on a specific country
     static func fetchCountryData(code: String) -> AnyPublisher<Country, Error>  {
-        return ApolloWrapper().fetch(query: CountryInfoQuery(code: code))
+        return Deferred {
+            ApolloWrapper().fetch(query: CountryInfoQuery(code: code))
             .decode(type: Country.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
 }

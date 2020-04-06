@@ -15,6 +15,7 @@ struct CountryDetailsView: View {
     var body: some View {
         content
         .navigationBarTitle("\(title)", displayMode: .inline)
+        .onAppear { self.viewModel.send(event: .onAppear) }
     }
 
     private var content: some View {

@@ -65,7 +65,11 @@ extension ContinentListViewModel {
         case .loading:
             switch event {
             case .onContinentsLoaded(let continents):
-                return .loaded(continents)
+                var continentsDisplayable = [ContinentDisplayable]()
+                continents.forEach { continent in
+                    continentsDisplayable.append(ContinentDisplayable(continent: continent))
+                }
+                return .loaded(continentsDisplayable)
             case .onFailedToLoadContinents(let error):
                 return .error(error)
             default:
@@ -101,7 +105,7 @@ extension ContinentListViewModel {
     enum State {
         case idle
         case loading
-        case loaded([Continent])
+        case loaded([ContinentDisplayable])
         case error(Error)
     }
 
@@ -110,5 +114,22 @@ extension ContinentListViewModel {
         case onSelectContinent(Int)
         case onContinentsLoaded([Continent])
         case onFailedToLoadContinents(Error)
+    }
+}
+
+
+struct ContinentDisplayable: Identifiable {
+    var id: String
+    var name: String
+    var countries: [Country]
+
+    var numberOfCountries: Int {
+        return countries.count
+    }
+
+    init(continent: Continent){
+        self.id = continent.id
+        self.name = continent.name
+        self.countries = continent.countries ?? [Country]()
     }
 }

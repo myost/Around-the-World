@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContinentRow: View {
-    let continent: Continent
+    let continent: ContinentDisplayable
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5.0) {

@@ -32,7 +32,7 @@ struct ContinentListView: View {
         }
     }
 
-    private func list(of continents: [Continent]) -> some View {
+    private func list(of continents: [ContinentDisplayable]) -> some View {
         return List {
             ForEach(continents) { continent in
                 NavigationLink(destination: ContinentDetailsView(continent: continent)) {
