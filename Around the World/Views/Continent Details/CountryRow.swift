@@ -18,6 +18,5 @@ struct CountryRow: View {
     private var content: some View {
         return Text(country.name)
             .font(.body)
-            .padding(5.0)
     }
 }

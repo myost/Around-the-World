@@ -9,7 +9,7 @@
 import Foundation
 
 struct Country: Codable, Identifiable {
-    var id: String
+    var id: String?
     var name: String
     var phone: String?
     var continent: Continent?
@@ -32,4 +32,8 @@ extension Country {
         case emojiU
         case states
     }
+}
+
+struct CountryContainer: Codable {
+    var country: Country
 }

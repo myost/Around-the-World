@@ -13,14 +13,14 @@ struct ContinentDetailsView: View {
     let continent: ContinentDisplayable
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 20.0) {
+        VStack(alignment: .leading, spacing: 10.0) {
             continentInfo
             List {
                 Section(header: Text("Countries")
-                    .font(.system(size: 24))
+                    .font(.headline)
                     .padding(5.0)) {
                     ForEach(continent.countries) { country in
-                        NavigationLink(destination: CountryDetailsView(viewModel: CountryDetailsViewModel(countryId: country.id), title: country.name)) {
+                        NavigationLink(destination: CountryDetailsView(viewModel: CountryDetailsViewModel(countryId: country.id ?? "US"), title: country.name)) {
                             CountryRow(country: country)
                         }
                     }
@@ -31,10 +31,9 @@ struct ContinentDetailsView: View {
     }
 
     private var continentInfo: some View {
-        VStack(alignment: .leading, spacing: 10.0) {
-            Text("Name: \(continent.name)")
-            Text("Code: \(continent.id)")
-            Text("Total number of countries: \(continent.numberOfCountries)")
-        }.padding(20)
+        VStack(alignment: .leading, spacing: 20.0) {
+            createDetailView(withTitle: "Continent Code:", details: continent.id)
+            createDetailView(withTitle: "Number of Countries", details: "\(continent.numberOfCountries)")
+        }.padding(15)
     }
 }

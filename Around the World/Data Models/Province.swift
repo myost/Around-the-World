@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Province: Codable, Identifiable {
+struct Province: Codable {
     var name: String
-    var id: String
+    var id: String?
     var country: Country?
 }
 

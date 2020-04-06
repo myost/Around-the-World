@@ -131,7 +131,7 @@ struct CountryDisplayable {
     var states: [Province]
 
     init(country: Country) {
-        self.id = country.id
+        self.id = country.id ?? ""
         self.name = country.name
         self.phone = country.phone ?? ""
         self.continent = country.continent?.name ?? ""

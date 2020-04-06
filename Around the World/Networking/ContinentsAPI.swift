@@ -26,7 +26,8 @@ enum ContinentsAPI {
     static func fetchCountryData(code: String) -> AnyPublisher<Country, Error>  {
         return Deferred {
             ApolloWrapper().fetch(query: CountryInfoQuery(code: code))
-            .decode(type: Country.self, decoder: JSONDecoder())
+            .decode(type: CountryContainer.self, decoder: JSONDecoder())
+            .compactMap { $0.country }
             .eraseToAnyPublisher()
         }.eraseToAnyPublisher()
     }
