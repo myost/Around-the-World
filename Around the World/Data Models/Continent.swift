@@ -11,7 +11,7 @@ import Foundation
 struct Continent: Codable, Identifiable {
     var id: String
     var name: String
-    var countries: [Country]
+    var countries: [Country]?
 }
 
 extension Continent {
@@ -20,4 +20,9 @@ extension Continent {
         case name
         case countries
     }
+}
+
+
+struct ContinentContainer: Codable {
+    var continents: [Continent]?
 }

@@ -8,49 +8,38 @@
 
 import Foundation
 import Apollo
+import Combine
 
 let apollo: ApolloClient = {
     let client = ApolloClient(url: URL(string: "https://countries.trevorblades.com/")!)
     return client
 }()
 
-final class ApolloWrapper<T: Decodable> {
-    typealias ApolloCompletion<T> = (Result<T, NetworkError>) -> Void
+final class ApolloWrapper {
 
-    func fetch<Query: GraphQLQuery>(query: Query, completion: ApolloCompletion<T>?) {
-        apollo.fetch(query: query) { result in
-            switch result {
-            case .success(let result):
-                if let data = result.data {
-                    do {
-                        let jsonData = try JSONSerialization.data(withJSONObject: data.jsonObject, options: .fragmentsAllowed)
-                        let decoder = JSONDecoder()
-                        let object = try decoder.decode(T.self, from: jsonData)
-                        completion?(.success(object))
-                    } catch {
-                        print("Error decoding: \(T.self) with error \(error)")
-                        completion?(.failure(NetworkError.error(error)))
+    func fetch<Query: GraphQLQuery>(query: Query) -> AnyPublisher <Data, Error> {
+        return Future <Data, Error> { promise in
+            apollo.fetch(query: query) { result in
+                switch result {
+                case .success(let result):
+                    if let data = result.data {
+                        do {
+                            let jsonData = try JSONSerialization.data(withJSONObject: data.jsonObject, options: .fragmentsAllowed)
+                            promise(Result.success(jsonData))
+                        } catch {
+                            print("Error converting result to json with error \(error)")
+                            return promise(Result.failure(error))
+                        }
+                    } else if let errors = result.errors {
+                        let message = errors
+                            .map { $0.localizedDescription }
+                            .joined(separator: "\n")
+                        print( "GraphQL Error(s): \(message)")
                     }
+                case .failure(let error):
+                    return promise(Result.failure(error))
                 }
-                if let errors = result.errors {
-                    let message = errors
-                        .map { $0.localizedDescription }
-                        .joined(separator: "\n")
-                    print( "GraphQL Error(s): \(message)")
-                    return
-                }
-            case .failure(let error):
-                completion?(.failure(NetworkError.error(error)))
             }
-        }
+        }.eraseToAnyPublisher()
     }
-}
-
-enum NetworkError: Swift.Error {
-    case error(Error)
-}
-
-enum Result<T, Error: Swift.Error> {
-    case success(T)
-    case failure(Error)
 }

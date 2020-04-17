@@ -1,5 +1,5 @@
 //
-//  State.swift
+//  Province.swift
 //  Around the World
 //
 //  Created by Madison Yost on 3/26/20.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct State: Codable, Identifiable {
-    var name: String?
+struct Province: Codable {
+    var name: String
     var id: String?
     var country: Country?
 }
 
-extension State {
+extension Province {
     enum CodingKeys: String, CodingKey  {
         case name
         case id = "code"
