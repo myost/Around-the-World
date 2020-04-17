@@ -1,4 +1,4 @@
-# Around-the-World
+# Around the World
 ## What?
 Around the World is a simple app that uses GraphQL and the @trevorblades [Countries API](https://github.com/trevorblades/countries) to fetch data on countries and continents with the help of the [Apollo iOS](https://github.com/apollographql/apollo-ios) framework. Then it uses the pattern from [Modern MVVM](https://github.com/V8tr/ModernMVVM) and [Combine]() to process and display that data in a swift app written in SwiftUI.
 ## Why?
