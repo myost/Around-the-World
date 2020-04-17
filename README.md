@@ -5,9 +5,9 @@ Around the World is a simple app that uses GraphQL and the @trevorblades [Countr
 The frameworks and languages used to create this app are relatively new to the world of iPhone app development. In order to understand them all better I did what most any developer would probably do, start coding. To create this project I spent plenty of days pouring over all kinds of documentation, wrapping my head around the different concepts and then putting them to use. And now you get to see the result.
 ## Helpful Links
 Along the way I got help from various different online sources including:
-[Apple Developer Documentation](https://developer.apple.com/)
-Apple's [SwiftUI Tutorials](https://developer.apple.com/tutorials/swiftui)
-[Using Combine](https://heckj.github.io/swiftui-notes/) by Joseph Heck
-GraphQL's awesome [Documentation](https://graphql.org/)
-And [Apollo iOS Documentation](https://www.apollographql.com/docs/ios/) as well
-And of course, the really smart coder people sitting in my corner - special thanks to you people!!
+[Apple Developer Documentation](https://developer.apple.com/)  
+Apple's [SwiftUI Tutorials](https://developer.apple.com/tutorials/swiftui)  
+[Using Combine](https://heckj.github.io/swiftui-notes/) by Joseph Heck  
+GraphQL's awesome [Documentation](https://graphql.org/)  
+And [Apollo iOS Documentation](https://www.apollographql.com/docs/ios/) as well  
+And of course, the really smart coder people sitting in my corner - special thanks to you people!!  
