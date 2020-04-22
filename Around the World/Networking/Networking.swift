@@ -13,45 +13,34 @@ protocol RequestProviding {
     var urlRequest: URLRequest { get }
 }
 
-protocol QueryProviding {
-    var network: Networking { get }
+protocol ContinentsQueryProviding {
+    var apiSession: APISessionProviding { get }
 
-    func fetchContinents(_ completion: @escaping(Result<[Continent], Error>) -> Void)
-    func fetchCountry(code: String, _ completion: @escaping(Result<Country, Error>) -> Void)
+    func fetchContinents() -> AnyPublisher<[Continent], Error>
 }
 
-extension QueryProviding {
-    func fetchContinents(_ completion: @escaping(Result<[Continent], Error>) -> Void) {
-        network.fetch(ContinentsQuery(), completion: completion)
-    }
+protocol CountryQueryProviding {
+    var apiSession: APISessionProviding { get }
 
-    func fetchCountry(code: String, _ completion: @escaping(Result<Country, Error>) -> Void) {
-        network.fetch(CountryQuery(code: code), completion: completion)
-    }
+    func fetchCountry(code: String) -> AnyPublisher<Country, Error>
 }
 
-protocol Networking {
-    func fetch<T: Decodable>(_ request: RequestProviding, completion: @escaping(Result<T, Error>) -> Void)
+protocol APISessionProviding {
+    func execute(_ requestProvider: RequestProviding) -> AnyPublisher<Data, Error>
 }
 
-extension Networking {
-    func fetch<T: Decodable>(_ request: RequestProviding, completion: @escaping(Result<T, Error>) -> Void) {
-        let urlRequest = request.urlRequest
+struct ApiSession: APISessionProviding {
+    static let shared = ApiSession()
 
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            do {
-                if let error = error {
-                    completion(.failure(error))
-                    return
+    func execute(_ requestProvider: RequestProviding) -> AnyPublisher<Data, Error> {
+        return URLSession.shared.dataTaskPublisher(for: requestProvider.urlRequest)
+            .tryMap { data, response in
+                if let response = response as? HTTPURLResponse {
+                    let headerData = response.allHeaderFields
+                    print(headerData)
                 }
-
-                guard let data = data else { preconditionFailure("No error was received but there is no data...") }
-
-                let decodedObject = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(decodedObject))
-            } catch {
-                completion(.failure(error))
+                return data
             }
-        }.resume()
+            .eraseToAnyPublisher()
     }
 }

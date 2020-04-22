@@ -90,7 +90,7 @@ extension ContinentListViewModel {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
 
-            return ContinentsAPI.fetchContinentData()
+            return ContinentListQueryProvider().fetchContinents()
                 .map(Event.onContinentsLoaded)
                 .catch { Just(Event.onFailedToLoadContinents($0)) }
                 .eraseToAnyPublisher()

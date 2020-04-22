@@ -3,4 +3,118 @@
    uuid = "AA15DB52-1915-44EF-82E6-9DFAFE2E3908"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA2499F5-96FB-4F06-B391-5900025A71D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Around the World/Views/Country Details/CountryDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "whenLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DBC355D-85F4-4C87-8A00-DA68910B1DCF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Around the World/Views/Continent List/ContinentListQueryProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "fetchContinents()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9255A46B-A4E6-4523-96A6-45FD0BA7CAFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Around the World/Views/Continent List/ContinentListQueryProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "fetchContinents()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9255A46B-A4E6-4523-96A6-45FD0BA7CAFE - 2e97b54c04b1f27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Around_the_World.ContinentListQueryProvider.fetchContinents() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Around_the_World.Continent&gt;, Swift.Error&gt;"
+                  moduleName = "Around the World"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madison.yost/Documents/My%20Test%20Projects/Around-the-World/Around%20the%20World/Views/Continent%20List/ContinentListQueryProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "557">
+               </Location>
+               <Location
+                  uuid = "9255A46B-A4E6-4523-96A6-45FD0BA7CAFE - 93d0234fa17e88c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Around_the_World.ContinentContainer) -&gt; Swift.Optional&lt;Swift.Array&lt;Around_the_World.Continent&gt;&gt; in Around_the_World.ContinentListQueryProvider.fetchContinents() -&gt; Combine.AnyPublisher&lt;Swift.Array&lt;Around_the_World.Continent&gt;, Swift.Error&gt;"
+                  moduleName = "Around the World"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/madison.yost/Documents/My%20Test%20Projects/Around-the-World/Around%20the%20World/Views/Continent%20List/ContinentListQueryProvider.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D84E3DA3-9A24-4196-B0FD-BD305F7DCF39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Around the World/Views/Continent List/ContinentListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "whenLoading()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1756219-A069-4BBE-A09B-6B0C36758E55"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Around the World/Networking/Networking.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "execute(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

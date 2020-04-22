@@ -84,7 +84,7 @@ extension CountryDetailsViewModel {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading(let code) = state else { return Empty().eraseToAnyPublisher() }
 
-            return ContinentsAPI.fetchCountryData(code: code)
+            return CountryDetailsQueryProvider().fetchCountry(code: code)
                 .map(Event.onCountryLoaded)
                 .catch { Just(Event.onFailedToLoadCountry($0)) }
                 .eraseToAnyPublisher()

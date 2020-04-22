@@ -26,3 +26,7 @@ extension Continent {
 struct ContinentContainer: Codable {
     var continents: [Continent]?
 }
+
+struct ContinentData: Codable {
+    var data: ContinentContainer
+}
