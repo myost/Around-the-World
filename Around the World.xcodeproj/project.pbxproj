@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0380AF2450D520004D16F5 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0380AE2450D520004D16F5 /* Queries.swift */; };
 		9A5B21742436427C0012593A /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5B21732436427C0012593A /* Spinner.swift */; };
 		9A613C87243676B100718082 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C86243676B100718082 /* System.swift */; };
 		9A613C89243676C200718082 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A613C88243676C200718082 /* Feedback.swift */; };
@@ -32,9 +33,11 @@
 		9ACF49CE242E439E00FA269D /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49CD242E439E00FA269D /* Apollo.swift */; };
 		9ACF49D2242E6A1800FA269D /* CountryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */; };
 		9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACF49D3242E879500FA269D /* CountryRow.swift */; };
+		9ADB354C244F854900D11F63 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB354B244F854900D11F63 /* Networking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A0380AE2450D520004D16F5 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
 		9A5B21732436427C0012593A /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		9A613C86243676B100718082 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
 		9A613C88243676C200718082 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		9ACF49CF242E697500FA269D /* CountryDetails.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CountryDetails.graphql; sourceTree = "<group>"; };
 		9ACF49D1242E6A1800FA269D /* CountryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsView.swift; sourceTree = "<group>"; };
 		9ACF49D3242E879500FA269D /* CountryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRow.swift; sourceTree = "<group>"; };
+		9ADB354B244F854900D11F63 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +199,8 @@
 			children = (
 				9A6748D8242D5ACA003EDC52 /* schema.json */,
 				9ACF49CD242E439E00FA269D /* Apollo.swift */,
+				9ADB354B244F854900D11F63 /* Networking.swift */,
+				9A0380AE2450D520004D16F5 /* Queries.swift */,
 				9A7CD50C243790800063E9DB /* ContinentsAPI.swift */,
 			);
 			path = Networking;
@@ -302,10 +308,12 @@
 			files = (
 				9A9AB9B4242CF781000CB1C7 /* Country.swift in Sources */,
 				9A613C8D2436871800718082 /* ContinentRow.swift in Sources */,
+				9A0380AF2450D520004D16F5 /* Queries.swift in Sources */,
 				9A9AB9B6242CF7BB000CB1C7 /* Language.swift in Sources */,
 				9A613C89243676C200718082 /* Feedback.swift in Sources */,
 				9A9AB9B8242CF7C5000CB1C7 /* Continent.swift in Sources */,
 				9ACF49D4242E879500FA269D /* CountryRow.swift in Sources */,
+				9ADB354C244F854900D11F63 /* Networking.swift in Sources */,
 				9A5B21742436427C0012593A /* Spinner.swift in Sources */,
 				9A613C8B2436819600718082 /* View+Extensions.swift in Sources */,
 				9A7CD50B24378D0C0063E9DB /* CountryDetailsViewModel.swift in Sources */,

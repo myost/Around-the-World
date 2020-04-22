@@ -1,8 +1,3 @@
-fragment CountryBasics on Country {
-  name
-  code
-}
-
 query ContinentsInfo {
   continents {
     name
@@ -13,3 +8,7 @@ query ContinentsInfo {
   }
 }
 
+fragment CountryBasics on Country {
+  name
+  code
+}
