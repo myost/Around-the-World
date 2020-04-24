@@ -1,0 +1,11 @@
+## General OS Files
+.DS_Store
+UserInterfaceState.xcuserstate
+xcdebugger
+xcuserdatad
+*.xccheckout
+*.xcworkspacedata
+
+## build generated
+build/
+DerivedData/
