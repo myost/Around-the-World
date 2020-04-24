@@ -18,6 +18,8 @@ final class ContinentListViewModel: ObservableObject {
 
     //MARK: Private
 
+    private static let continentQueryProvider = ContinentListQueryProvider()
+
     private var cancellableSet = Set<AnyCancellable>()
     private let input = PassthroughSubject<Event, Never>()
 
@@ -90,7 +92,7 @@ extension ContinentListViewModel {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading = state else { return Empty().eraseToAnyPublisher() }
 
-            return ContinentListQueryProvider().fetchContinents()
+            return continentQueryProvider.fetchContinents()
                 .map(Event.onContinentsLoaded)
                 .catch { Just(Event.onFailedToLoadContinents($0)) }
                 .eraseToAnyPublisher()
