@@ -17,6 +17,8 @@ final class CountryDetailsViewModel: ObservableObject {
 
     //MARK: Private
 
+    private static let countryQueryProvider = CountryDetailsQueryProvider()
+
     private var cancellableSet = Set<AnyCancellable>()
     private let input = PassthroughSubject<Event, Never>()
 
@@ -84,7 +86,7 @@ extension CountryDetailsViewModel {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading(let code) = state else { return Empty().eraseToAnyPublisher() }
 
-            return ContinentsAPI.fetchCountryData(code: code)
+            return countryQueryProvider.fetchCountry(code: code)
                 .map(Event.onCountryLoaded)
                 .catch { Just(Event.onFailedToLoadCountry($0)) }
                 .eraseToAnyPublisher()
