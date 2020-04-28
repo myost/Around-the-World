@@ -16,7 +16,7 @@ struct HomeTabView: View {
                 Image(systemName: "list.dash")
                 Text("Countries")
             }
-            SearchView()
+            SearchView(viewModel: SearchViewModel())
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")

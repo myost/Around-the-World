@@ -22,8 +22,12 @@ protocol ContinentsQueryProviding {
 protocol CountryQueryProviding {
     var apiSession: APISessionProviding { get }
 
-    func fetchCountry(code: String) -> AnyPublisher<Country, Error>
+    func fetchCountries(code: String) -> AnyPublisher<[Country], Error>
 }
+
+//protocol CountriesQueryProviding {
+//    var apiSession: APISessionProviding
+//}
 
 protocol APISessionProviding {
     func execute(_ requestProvider: RequestProviding) -> AnyPublisher<Data, Error>

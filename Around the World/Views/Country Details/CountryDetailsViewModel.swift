@@ -86,7 +86,8 @@ extension CountryDetailsViewModel {
         Feedback { (state: State) -> AnyPublisher<Event, Never> in
             guard case .loading(let code) = state else { return Empty().eraseToAnyPublisher() }
 
-            return countryQueryProvider.fetchCountry(code: code)
+            return countryQueryProvider.fetchCountries(code: code)
+                .compactMap{ $0.first }
                 .map(Event.onCountryLoaded)
                 .catch { Just(Event.onFailedToLoadCountry($0)) }
                 .eraseToAnyPublisher()
@@ -121,7 +122,7 @@ extension CountryDetailsViewModel {
 
 //MARK: - CountryDisplayable
 
-struct CountryDisplayable {
+struct CountryDisplayable: Identifiable {
     var id: String
     var name: String
     var phone: String
