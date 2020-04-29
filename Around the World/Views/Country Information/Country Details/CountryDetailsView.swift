@@ -15,6 +15,7 @@ struct CountryDetailsView: View {
     init(viewModel: CountryDetailsViewModel, title: String) {
         self.title = title
         self.viewModel = viewModel
+        //Remove the extra separator lines from the table view
         UITableView.appearance().tableFooterView = UIView()
     }
 

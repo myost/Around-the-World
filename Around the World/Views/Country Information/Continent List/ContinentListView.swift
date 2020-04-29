@@ -12,6 +12,12 @@ import Combine
 struct ContinentListView: View {
     @ObservedObject var viewModel: ContinentListViewModel
 
+    init(viewModel: ContinentListViewModel) {
+        self.viewModel = viewModel
+        //Remove the extra line separators from table view
+        UITableView.appearance().tableFooterView = UIView()
+    }
+
     var body: some View {
         NavigationView {
             content

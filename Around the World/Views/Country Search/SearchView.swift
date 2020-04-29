@@ -12,6 +12,12 @@ import Combine
 struct SearchView: View {
     @ObservedObject var viewModel: SearchViewModel
 
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+        //Remove the extra line separators from table view
+        UITableView.appearance().tableFooterView = UIView()
+    }
+
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 10) {

@@ -21,6 +21,11 @@ struct HomeTabView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
             }
+            FavoritesView()
+                .tabItem {
+                    Image(systemName: "star.fill")
+                    Text("Favorites")
+            }
         }
     }
 }
