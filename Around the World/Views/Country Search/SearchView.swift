@@ -13,28 +13,28 @@ struct SearchView: View {
     @ObservedObject var viewModel: SearchViewModel
 
     var body: some View {
-        VStack {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Country Search")
-                    .font(.largeTitle)
-                    .padding()
-                HStack(alignment: .center, spacing: 15) {
-                    Image(systemName: "magnifyingglass")
+        NavigationView {
+            VStack {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .center, spacing: 15) {
+                        Image(systemName: "magnifyingglass")
+                            .padding()
+                        TextField("Enter a country code", text: $viewModel.countryCode)
                         .padding()
-                    TextField("Enter a country code", text: $viewModel.countryCode)
-                    .padding()
+                    }
+                    .frame(height: 50)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.gray, lineWidth: 2)
+                    )
+                    .padding(10)
                 }
-                .frame(height: 50)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray, lineWidth: 2)
-                )
-                .padding(10)
+                countriesList
+                Spacer()
             }
-            countriesList
-            Spacer()
-        }
         .padding()
+             .navigationBarTitle("Country Search")
+        }
     }
 
     var countriesList: some View {
@@ -54,7 +54,9 @@ struct SearchView: View {
     func list(of countries: [CountryDisplayable]) -> some View {
         return List {
             ForEach(countries) { country in
-                self.countryRow(with: country)
+                NavigationLink(destination: CountryDetailsView(viewModel: CountryDetailsViewModel(countryId: country.id), title: country.name)) {
+                    self.countryRow(with: country)
+                }
             }
         }
     }

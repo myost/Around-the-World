@@ -134,10 +134,6 @@ fileprivate enum QueryStrings {
             name
             code
             emoji
-            continent {
-              name
-              code
-            }
           }
         }
     """
