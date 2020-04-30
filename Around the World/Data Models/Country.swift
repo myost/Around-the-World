@@ -35,7 +35,8 @@ extension Country {
 }
 
 struct CountryContainer: Codable {
-    var country: Country
+    var country: Country?
+    var countries: [Country]?
 }
 
 struct CountryData: Codable {

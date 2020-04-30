@@ -34,31 +34,43 @@ enum QueryType {
     case country(_ code: String)
 }
 
-struct ContinentsQuery: Query, RequestProviding {
+struct ContinentsQuery: Query{
     var body: [String: Any] = [:]
     var type: QueryType
 
     init() {
         self.type = .continents
-        self.body.updateValue(QueryStrings.ContinentsInfo, forKey: JSONRequestKeys.queryKey)
+        self.body.updateValue(QueryStrings.ContinentsInfo, forKey: JSONRequestKeys.Query)
     }
 }
 
-struct CountryQuery: Query, RequestProviding {
+struct CountryQuery: Query{
     var body: [String: Any] = [:]
     var type: QueryType
 
     init(code: String) {
         self.type = .country(code)
-        self.body.updateValue(QueryStrings.CountryInfo, forKey: JSONRequestKeys.queryKey)
-        self.body.updateValue(["code": code], forKey: JSONRequestKeys.variableKey)
+        self.body.updateValue(QueryStrings.CountryInfo, forKey: JSONRequestKeys.Query)
+        self.body.updateValue(["code": code], forKey: JSONRequestKeys.Variables)
+    }
+}
+
+struct CountrySearchQuery: Query {
+    var body: [String : Any] = [:]
+
+    var type: QueryType
+
+    init(searchString: String) {
+        self.type = .country(searchString)
+        self.body.updateValue(QueryStrings.CountrySearch, forKey: JSONRequestKeys.Query)
+        self.body.updateValue(["code": searchString], forKey: JSONRequestKeys.Variables)
     }
 }
 
 fileprivate enum JSONRequestKeys {
-    static let queryKey = "query"
-    static let variableKey = "variables"
-    static let operationNameKey = "operationName"
+    static let Query = "query"
+    static let Variables = "variables"
+    static let OperationName = "operationName"
 }
 
 fileprivate enum QueryStrings {
@@ -80,39 +92,49 @@ fileprivate enum QueryStrings {
         """
 
     static let CountryInfo = """
-            query CountryInfo($code: ID!) {
-              country(code: $code) {
-                ...CountryDetails
-              }
-            }
+        query CountryInfo($code: ID!) {
+          country(code: $code) {
+            ...CountryDetails
+          }
+        }
 
-            fragment CountryDetails on Country {
-              code
-              name
-              phone
-              currency
-              emoji
-              continent{
-                name
-                code
-              }
-              states {
-                ...StateDetails
-              }
-              languages{
-                ...LanguageDetails
-              }
-            }
+        fragment CountryDetails on Country {
+          code
+          name
+          phone
+          currency
+          emoji
+          continent{
+            name
+            code
+          }
+          states {
+            ...StateDetails
+          }
+          languages{
+            ...LanguageDetails
+          }
+        }
 
-            fragment LanguageDetails on Language {
-              name
-              native
-              code
-            }
+        fragment LanguageDetails on Language {
+          name
+          native
+          code
+        }
 
-            fragment StateDetails on State {
-              name
-              code
-            }
-            """
+        fragment StateDetails on State {
+          name
+          code
+        }
+        """
+
+    static let CountrySearch = """
+        query filteredCountries($code: String) {
+          countries(filter: {code: {regex: $code}}) {
+            name
+            code
+            emoji
+          }
+        }
+    """
 }
