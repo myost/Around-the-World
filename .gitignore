@@ -2,7 +2,7 @@
 .DS_Store
 UserInterfaceState.xcuserstate
 xcdebugger
-*.xcuserdatad
+xcuserdata/
 *.xccheckout
 *.xcworkspacedata
 
